@@ -73,11 +73,11 @@ export function LeftSide({ aboutContent }: LeftSideProps) {
                   <div className="space-y-2 text-base md:text-lg font-serif text-muted-foreground">
                     <div className="flex items-start space-x-2">
                       <span className="text-foreground">•</span>
-                      <span>sequencing everything and everyone</span>
+                      <span>sequencing everything</span>
                     </div>
                     <div className="flex items-start space-x-2">
                       <span className="text-foreground">•</span>
-                      <span>sculpting biomes using gene drives</span>
+                      <span>other stuff</span>
                     </div>
                     <div className="flex items-start space-x-2">
                       <span className="text-foreground">•</span>

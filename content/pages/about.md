@@ -15,7 +15,7 @@ I earned my PhD at Stanford in the Quake lab, where I studied the generation and
 
 **Some other interests:**
 
-sequencing everything and everyone
+sequencing everything
 
 sculpting biomes using gene drives
 
