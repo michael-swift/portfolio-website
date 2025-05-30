@@ -112,10 +112,10 @@ export default function RightSide({ posts, scienceProjects }: RightSideProps) {
         <h2 className="text-3xl font-serif mt-6 mb-4">Contact</h2>
         <div className="space-y-4 max-w-lg">
           <p className="text-lg font-serif leading-relaxed text-muted-foreground">
-            I'm always happy to connect with people working on similar problems or with shared interests.
+            I'm always happy to connect with people who work on similar problems or share interests.
           </p>
           <p className="text-base font-serif text-muted-foreground">
-            You can find me on the usual academic and professional social platforms.
+            Find me on most social internet platforms
           </p>
         </div>
       </section>
