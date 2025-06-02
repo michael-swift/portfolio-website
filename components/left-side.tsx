@@ -44,7 +44,7 @@ export function LeftSide({ aboutContent }: LeftSideProps) {
         <div className={`transition-opacity duration-500 ${hasScrolled ? "opacity-50" : "opacity-100"}`}>
           <div className="mb-6">
             <h1 className="text-3xl md:text-4xl font-sans font-medium">
-              <a href="/">Michael Swift</a>
+              <a href="/">Kerna Labs</a>
             </h1>
           </div>
         </div>
@@ -62,26 +62,26 @@ export function LeftSide({ aboutContent }: LeftSideProps) {
                 <div className="space-y-3">
                   <h3 className="text-lg md:text-xl font-serif font-semibold text-foreground">Currently</h3>
                   <div className="space-y-4 text-lg md:text-xl font-serif leading-relaxed text-muted-foreground">
-                    <p>I'm a biologist using machine learning to design better RNA therapeutics.</p>
-                    <p>I earned my PhD at Stanford in the Quake lab, where I studied the generation and maintenance of diversity in the human immune system.</p>
+                    <p>We aim to transform the discovery and development of life-changing therapies by leveraging AI and high-throughput biology to decode RNA biology.</p>
+                    <p>Our mission is to revolutionize therapeutic development through cutting-edge computational biology and machine learning approaches.</p>
                   </div>
                 </div>
 
                 {/* Interests Section */}
                 <div className="space-y-3">
-                  <h3 className="text-lg font-serif font-semibold text-foreground">Some other interests</h3>
+                  <h3 className="text-lg font-serif font-semibold text-foreground">Focus Areas</h3>
                   <div className="space-y-2 text-base md:text-lg font-serif text-muted-foreground">
                     <div className="flex items-start space-x-2">
                       <span className="text-foreground">•</span>
-                      <span>sequencing everything</span>
+                      <span>RNA therapeutics</span>
                     </div>
                     <div className="flex items-start space-x-2">
                       <span className="text-foreground">•</span>
-                      <span>other stuff</span>
+                      <span>AI-driven drug discovery</span>
                     </div>
                     <div className="flex items-start space-x-2">
                       <span className="text-foreground">•</span>
-                      <span>producing music</span>
+                      <span>high-throughput biology</span>
                     </div>
                   </div>
                 </div>

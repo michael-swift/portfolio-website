@@ -1,23 +1,24 @@
 ---
-permalink: /
-title: ""
-excerpt: "About me"
-author_profile: true
-redirect_from: 
-  - /about/
-  - /about.html
+title: About Kerna Labs
+slug: about
 ---
 
-**Currently**
-I'm a quantitative biologist using ML to design better RNA therapeutics. 
+# About Kerna Labs
 
-I earned my PhD at Stanford in the Quake lab, where I studied the generation and maintenance of diversity in the human immune system.
+We aim to transform the discovery and development of life-changing therapies by leveraging AI and high-throughput biology to decode RNA biology.
 
-**Some other interests:**
+## Our Mission
 
-sequencing everything
+At Kerna Labs, we are revolutionizing the therapeutic development landscape through cutting-edge computational biology and machine learning approaches. Our focus on RNA biology positions us at the forefront of next-generation therapeutic discovery.
 
-sculpting biomes using gene drives
+## Technology Platform
 
-producing music
+Our proprietary platform combines:
+- Advanced AI algorithms for RNA target identification
+- High-throughput experimental validation
+- Computational modeling of RNA-protein interactions
+- Machine learning-driven optimization of therapeutic candidates
 
+## Approach
+
+By integrating artificial intelligence with high-throughput biological experimentation, we are able to decode the complex mechanisms of RNA biology and translate these insights into transformative therapies for patients worldwide.
