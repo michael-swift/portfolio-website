@@ -5,14 +5,14 @@ export function SocialLinks() {
   return (
     <div className="flex space-x-4">
       <Link
-        href="mailto:swiftmichael26@gmail.com"
+        href="mailto:your.email@example.com"
         className="text-neutral-700 hover:text-primary transition-colors"
         aria-label="Email"
       >
         <Mail size={20} />
       </Link>
       <Link
-        href="https://scholar.google.com/citations?hl=en&user=7Ywb2akAAAAJ"
+        href="https://scholar.google.com/citations?user=YOURUSER"
         target="_blank"
         rel="noopener noreferrer"
         className="text-neutral-700 hover:text-primary transition-colors"
@@ -21,7 +21,7 @@ export function SocialLinks() {
         <GraduationCap size={20} />
       </Link>
       <Link
-        href="https://github.com/michael-swift"
+        href="https://github.com/yourusername"
         target="_blank"
         rel="noopener noreferrer"
         className="text-neutral-700 hover:text-primary transition-colors"

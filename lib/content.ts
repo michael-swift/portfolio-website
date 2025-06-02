@@ -43,6 +43,8 @@ export interface ContentItem {
   category?: string
   tags?: string[]
   content: string
+  categories?: string[]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any
 }
 
@@ -123,7 +125,7 @@ export async function getContentItem(type: string, slug: string): Promise<Conten
       tags: data.tags,
       ...data
     } as ContentItem
-  } catch (error) {
+  } catch {
     return null
   }
 }
@@ -147,4 +149,9 @@ export async function getScienceProjects(): Promise<ContentItem[]> {
 // Helper function to get publications
 export async function getPublications(): Promise<ContentItem[]> {
   return getContentItems('publications')
+}
+
+// Helper function to get any content type
+export async function getAllContentByType(type: string): Promise<ContentItem[]> {
+  return getContentItems(type)
 }

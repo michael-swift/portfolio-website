@@ -2,8 +2,6 @@
 import Image from "next/image"
 import { ChevronDown, ChevronRight } from "lucide-react"
 import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card"
-import { ContactForm } from "./contact-form"
-import { NewsletterSignup } from "./newsletter-signup"
 import { ContentItem } from "@/lib/content"
 
 interface RightSideProps {
@@ -18,8 +16,8 @@ export default function RightSide({ posts, scienceProjects }: RightSideProps) {
       <div className="hidden md:block relative h-[780px]">
         <div className="absolute inset-0 flex items-center justify-center p-8">
           <Image
-            src="/natto_instructions.svg"
-            alt="Natto instructions illustration"
+            src="/placeholder-illustration.svg"
+            alt="Placeholder illustration"
             width={800}
             height={800}
             className="object-contain max-w-full max-h-full"
@@ -42,11 +40,11 @@ export default function RightSide({ posts, scienceProjects }: RightSideProps) {
 
       {/* Science Section */}
       <section id="science" className="p-6 md:p-10">
-        <h2 className="text-3xl font-serif text-center mt-6 mb-4">Science</h2>
-        <p className="text-center mb-8">Research projects in computational biology and immunology.</p>
+        <h2 className="text-3xl font-serif text-center mt-6 mb-4">Projects</h2>
+        <p className="text-center mb-8">Professional projects and research work.</p>
 
         <div className="space-y-8">
-          {scienceProjects.map((project, index) => (
+          {scienceProjects.map((project) => (
             <Card key={project.slug} className="border border-neutral-200">
               <CardContent className="p-4 border-x border-b border-neutral-200">
                 <div className="text-sm uppercase mb-2">{project.category || 'Research'}</div>
@@ -71,7 +69,7 @@ export default function RightSide({ posts, scienceProjects }: RightSideProps) {
       {/* Blog Posts Section */}
       <section id="posts" className="p-6 md:p-10">
         <h2 className="text-3xl font-serif text-center mt-6 mb-4">Posts</h2>
-        <p className="text-center mb-8">partially formed ideas and partially implemented projects.</p>
+        <p className="text-center mb-8">Thoughts, ideas, and interesting projects I&apos;ve been working on.</p>
 
         <div className="space-y-8">
           {posts.map((post) => (
@@ -112,10 +110,10 @@ export default function RightSide({ posts, scienceProjects }: RightSideProps) {
         <h2 className="text-3xl font-serif mt-6 mb-4">Contact</h2>
         <div className="space-y-4 max-w-lg">
           <p className="text-lg font-serif leading-relaxed text-muted-foreground">
-            I'm always happy to connect with people who work on similar problems or share interests.
+            I&apos;m always interested in connecting with like-minded professionals and collaborators.
           </p>
           <p className="text-base font-serif text-muted-foreground">
-            Find me on most social internet platforms
+            Feel free to reach out through any of the social platforms above.
           </p>
         </div>
       </section>

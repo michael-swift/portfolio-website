@@ -1,23 +1,16 @@
 ---
-permalink: /
-title: ""
-excerpt: "About me"
-author_profile: true
-redirect_from: 
-  - /about/
-  - /about.html
+title: About
+slug: about
 ---
 
-**Currently**
-I'm a quantitative biologist using ML to design better RNA therapeutics. 
+# About Me
 
-I earned my PhD at Stanford in the Quake lab, where I studied the generation and maintenance of diversity in the human immune system.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
 
-**Some other interests:**
+## Background
 
-sequencing everything
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-sculpting biomes using gene drives
+## Current Work
 
-producing music
-
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.

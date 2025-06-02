@@ -15,6 +15,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Michael Swift",
   description: "Founding Research Scientist @ Kerna Labs",
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({

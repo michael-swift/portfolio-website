@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
-import { Card, CardContent, CardFooter, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardTitle } from '@/components/ui/card'
 import { getContentItems } from '@/lib/content'
 
 export default async function TangentsPage() {
