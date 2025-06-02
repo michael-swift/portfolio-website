@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { ChevronDown } from "lucide-react"
-import Image from "next/image"
+import Link from "next/link"
 import { Navigation } from "./navigation"
 import { SocialLinks } from "./social-links"
 import { ContentItem } from "@/lib/content"
@@ -44,7 +44,7 @@ export function LeftSide({ aboutContent }: LeftSideProps) {
         <div className={`transition-opacity duration-500 ${hasScrolled ? "opacity-50" : "opacity-100"}`}>
           <div className="mb-6">
             <h1 className="text-3xl md:text-4xl font-sans font-medium">
-              <a href="/">Kerna Labs</a>
+              <Link href="/">Kerna Laboratories</Link>
             </h1>
           </div>
         </div>
@@ -62,8 +62,8 @@ export function LeftSide({ aboutContent }: LeftSideProps) {
                 <div className="space-y-3">
                   <h3 className="text-lg md:text-xl font-serif font-semibold text-foreground">Currently</h3>
                   <div className="space-y-4 text-lg md:text-xl font-serif leading-relaxed text-muted-foreground">
-                    <p>We aim to transform the discovery and development of life-changing therapies by leveraging AI and high-throughput biology to decode RNA biology.</p>
-                    <p>Our mission is to revolutionize therapeutic development through cutting-edge computational biology and machine learning approaches.</p>
+                    <p>We are redefining how mRNA sequences are designed and delivered by leveraging artificial intelligence to unlock mRNA&apos;s immense potential.</p>
+                    <p>Our foundation models of RNA address critical bottlenecks in payload design and delivery, paving the way for a new generation of genetic medicines.</p>
                   </div>
                 </div>
 
@@ -73,15 +73,15 @@ export function LeftSide({ aboutContent }: LeftSideProps) {
                   <div className="space-y-2 text-base md:text-lg font-serif text-muted-foreground">
                     <div className="flex items-start space-x-2">
                       <span className="text-foreground">•</span>
-                      <span>RNA therapeutics</span>
+                      <span>mRNA foundation models</span>
                     </div>
                     <div className="flex items-start space-x-2">
                       <span className="text-foreground">•</span>
-                      <span>AI-driven drug discovery</span>
+                      <span>payload design optimization</span>
                     </div>
                     <div className="flex items-start space-x-2">
                       <span className="text-foreground">•</span>
-                      <span>high-throughput biology</span>
+                      <span>delivery system innovation</span>
                     </div>
                   </div>
                 </div>

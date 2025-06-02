@@ -1,7 +1,6 @@
 "use client"
 
 import type { ReactNode } from "react"
-import { useMediaQuery } from "@/hooks/use-media-query"
 
 interface SplitLayoutProps {
   leftSide: ReactNode
@@ -9,7 +8,6 @@ interface SplitLayoutProps {
 }
 
 export default function SplitLayout({ leftSide, rightSide }: SplitLayoutProps) {
-  const isMobile = useMediaQuery("(max-width: 1120px)")
 
   return (
     <div className="flex flex-col md:flex-row min-h-screen">

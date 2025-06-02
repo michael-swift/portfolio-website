@@ -2,8 +2,6 @@
 import Image from "next/image"
 import { ChevronDown, ChevronRight } from "lucide-react"
 import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card"
-import { ContactForm } from "./contact-form"
-import { NewsletterSignup } from "./newsletter-signup"
 import { ContentItem } from "@/lib/content"
 
 interface RightSideProps {
@@ -42,11 +40,11 @@ export default function RightSide({ posts, scienceProjects }: RightSideProps) {
 
       {/* Science Section */}
       <section id="science" className="p-6 md:p-10">
-        <h2 className="text-3xl font-serif text-center mt-6 mb-4">Research</h2>
-        <p className="text-center mb-8">Cutting-edge research in AI-driven RNA therapeutics and computational biology.</p>
+        <h2 className="text-3xl font-serif text-center mt-6 mb-4">Platform</h2>
+        <p className="text-center mb-8">Next-generation foundation models tackling critical mRNA design and delivery challenges.</p>
 
         <div className="space-y-8">
-          {scienceProjects.map((project, index) => (
+          {scienceProjects.map((project) => (
             <Card key={project.slug} className="border border-neutral-200">
               <CardContent className="p-4 border-x border-b border-neutral-200">
                 <div className="text-sm uppercase mb-2">{project.category || 'Research'}</div>
@@ -70,8 +68,8 @@ export default function RightSide({ posts, scienceProjects }: RightSideProps) {
 
       {/* Blog Posts Section */}
       <section id="posts" className="p-6 md:p-10">
-        <h2 className="text-3xl font-serif text-center mt-6 mb-4">Insights</h2>
-        <p className="text-center mb-8">Latest developments in RNA biology, AI therapeutics, and computational approaches.</p>
+        <h2 className="text-3xl font-serif text-center mt-6 mb-4">News</h2>
+        <p className="text-center mb-8">Latest developments from our team and the future of mRNA medicine.</p>
 
         <div className="space-y-8">
           {posts.map((post) => (
@@ -112,10 +110,10 @@ export default function RightSide({ posts, scienceProjects }: RightSideProps) {
         <h2 className="text-3xl font-serif mt-6 mb-4">Contact</h2>
         <div className="space-y-4 max-w-lg">
           <p className="text-lg font-serif leading-relaxed text-muted-foreground">
-            Interested in collaborating on RNA therapeutics or AI-driven drug discovery? We&apos;d love to connect.
+            Interested in collaborating on mRNA foundation models or genetic medicine? We&apos;d love to connect.
           </p>
           <p className="text-base font-serif text-muted-foreground">
-            Get connected with our research team and latest developments.
+            Reach out to our team of biotech industry veterans and AI experts.
           </p>
         </div>
       </section>
