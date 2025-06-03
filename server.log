@@ -1,0 +1,39 @@
+
+> my-app@0.1.0 dev
+> next dev --turbopack
+
+   ▲ Next.js 15.2.4 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://10.9.22.211:3000
+
+ ✓ Starting...
+ ✓ Ready in 573ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1103ms
+ GET / 200 in 1440ms
+ ✓ Compiled /favicon.ico in 166ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/michaelswift/Documents/personal/personal_repos/my-app/.next/server/app/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/michaelswift/Documents/personal/personal_repos/my-app/.next/server/app/page/app-build-manifest.json'
+}
+ ✓ Compiled /_error in 338ms
+ ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/.next/server/pages/_document.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/require.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/load-components.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/build/utils.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/build/swc/options.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/build/swc/index.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/config.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/next.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/lib/start-server.js
+    at Object.<anonymous> (.next/server/pages/_document.js:2:17) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET / 500 in 466ms
+[?25h

@@ -13,7 +13,6 @@ tags:
   - scRNA-seq
 ---
 ![png](/images/posts/llm_antibody/llm_ir-writeup_38_0.png)
-### motivation
 
 I wanted to understand if LLM / PLMs can be useful for analyzing antibody sequence data. Antibodies are proteins made by the immune system which are critical for protection against viruses. Here I used antibody sequencing data, AbLang (Antibody LLM), and single-cell rna sequencing data investigate.
 

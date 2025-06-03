@@ -2,28 +2,41 @@
 import Image from "next/image"
 import { ChevronDown, ChevronRight } from "lucide-react"
 import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card"
-import { ContactForm } from "./contact-form"
-import { NewsletterSignup } from "./newsletter-signup"
 import { ContentItem } from "@/lib/content"
+import { useState, useEffect } from "react"
+import { CoverImage } from "@/lib/get-cover-images"
 
 interface RightSideProps {
   posts: ContentItem[]
   scienceProjects: ContentItem[]
+  coverImages: CoverImage[]
 }
 
-export default function RightSide({ posts, scienceProjects }: RightSideProps) {
+export default function RightSide({ posts, scienceProjects, coverImages }: RightSideProps) {
+  const [selectedImage, setSelectedImage] = useState(coverImages[0])
+
+  useEffect(() => {
+    // Randomly select an image on component mount
+    if (coverImages.length > 0) {
+      const randomIndex = Math.floor(Math.random() * coverImages.length)
+      setSelectedImage(coverImages[randomIndex])
+    }
+  }, [coverImages])
+
   return (
     <div className="min-h-screen">
       {/* Banner image for desktop */}
       <div className="hidden md:block relative h-[780px]">
         <div className="absolute inset-0 flex items-center justify-center p-8">
-          <Image
-            src="/natto_instructions.svg"
-            alt="Natto instructions illustration"
-            width={800}
-            height={800}
-            className="object-contain max-w-full max-h-full"
-          />
+          {selectedImage && (
+            <Image
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              width={selectedImage.width}
+              height={selectedImage.height}
+              className="object-contain max-w-full max-h-full"
+            />
+          )}
         </div>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
           <button
@@ -46,7 +59,7 @@ export default function RightSide({ posts, scienceProjects }: RightSideProps) {
         <p className="text-center mb-8">Research projects in computational biology and immunology.</p>
 
         <div className="space-y-8">
-          {scienceProjects.map((project, index) => (
+          {scienceProjects.map((project) => (
             <Card key={project.slug} className="border border-neutral-200">
               <CardContent className="p-4 border-x border-b border-neutral-200">
                 <div className="text-sm uppercase mb-2">{project.category || 'Research'}</div>
@@ -112,7 +125,7 @@ export default function RightSide({ posts, scienceProjects }: RightSideProps) {
         <h2 className="text-3xl font-serif mt-6 mb-4">Contact</h2>
         <div className="space-y-4 max-w-lg">
           <p className="text-lg font-serif leading-relaxed text-muted-foreground">
-            I'm always happy to connect with people who work on similar problems or share interests.
+            I&apos;m always happy to connect with people who work on similar problems or share interests.
           </p>
           <p className="text-base font-serif text-muted-foreground">
             Find me on most social internet platforms

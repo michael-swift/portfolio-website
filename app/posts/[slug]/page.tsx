@@ -81,7 +81,8 @@ export default async function PostPage({ params }: PostPageProps) {
           prose-pre:bg-[#fdf6e3] prose-pre:text-[#657b83] prose-pre:p-4 prose-pre:rounded-lg prose-pre:overflow-x-auto prose-pre:border prose-pre:border-[#eee8d5] prose-pre:shadow-sm
           prose-pre:font-mono prose-pre:text-sm prose-pre:leading-relaxed
           [&_.hljs]:bg-transparent [&_.hljs]:text-inherit
-          prose-img:rounded-lg prose-img:shadow-sm">
+          prose-img:rounded-lg prose-img:shadow-sm prose-img:max-w-[60%] prose-img:mx-auto
+          [&_img]:max-w-[60%] [&_img]:mx-auto [&_img]:block">
           <div dangerouslySetInnerHTML={{ __html: post.content }} />
         </article>
 

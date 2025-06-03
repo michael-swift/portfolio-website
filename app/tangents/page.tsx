@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
-import { Card, CardContent, CardFooter, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardTitle } from '@/components/ui/card'
 import { getContentItems } from '@/lib/content'
 
 export default async function TangentsPage() {
@@ -24,7 +24,7 @@ export default async function TangentsPage() {
             Tangents
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl">
-            Creative projects, experiments, and diversions from the main path.
+           Experiments and diversions from the main path.
           </p>
         </header>
 

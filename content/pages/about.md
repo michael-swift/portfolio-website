@@ -9,7 +9,7 @@ redirect_from:
 ---
 
 **Currently**
-I'm a quantitative biologist using ML to design better RNA therapeutics. 
+I'm a systems biologist using ML to design better RNA therapeutics. 
 
 I earned my PhD at Stanford in the Quake lab, where I studied the generation and maintenance of diversity in the human immune system.
 

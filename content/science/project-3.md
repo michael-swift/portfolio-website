@@ -1,6 +1,6 @@
 ---
 title: "Creating the datasets to enable Molecular Medicine"
-category: "Atlas Building"
+category: "Single Cell Transcriptomics"
 date: "2022"
 excerpt: "I have been a key contributor to the Tabula Sapiens Consortium. Massive single-cell molecular datasets like this have been instrumental cell modeling efforts."
 link: "https://tabula-sapiens.sf.czbiohub.org/"

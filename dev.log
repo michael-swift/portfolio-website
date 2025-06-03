@@ -1,0 +1,76 @@
+
+> my-app@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.2.4
+   - Local:        http://localhost:3000
+   - Network:      http://10.9.22.211:3000
+
+ ✓ Starting...
+ ✓ Ready in 906ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 1709ms (765 modules)
+[Error: Cannot find module '/Users/michaelswift/Documents/personal/personal_repos/my-app/.next/server/middleware-manifest.json'
+Require stack:
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/next-server.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/dev/next-dev-server.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/next.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ○ Compiling / ...
+ ✓ Compiled / in 583ms (1076 modules)
+ ✓ Compiled in 34ms (550 modules)
+ ✓ Compiled in 343ms (593 modules)
+ ⨯ [Error: Cannot find module '/Users/michaelswift/Documents/personal/personal_repos/my-app/.next/server/pages/_document.js'
+Require stack:
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/require.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/load-components.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/build/utils.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/build/swc/options.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/build/swc/index.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/config.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/next.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: Cannot find module '/Users/michaelswift/Documents/personal/personal_repos/my-app/.next/server/middleware-manifest.json'
+Require stack:
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/next-server.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/dev/next-dev-server.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/next.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: Cannot find module '/Users/michaelswift/Documents/personal/personal_repos/my-app/.next/server/pages/_document.js'
+Require stack:
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/require.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/load-components.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/build/utils.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/build/swc/options.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/build/swc/index.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/config.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/next.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET / 500 in 3110ms
+ ✓ Compiled /favicon.ico in 396ms (1137 modules)
+ ⨯ [Error: Cannot find module '/Users/michaelswift/Documents/personal/personal_repos/my-app/.next/server/middleware-manifest.json'
+Require stack:
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/next-server.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/dev/next-dev-server.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/next.js
+- /Users/michaelswift/Documents/personal/personal_repos/my-app/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /favicon.ico 500 in 412ms
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/michaelswift/Documents/personal/personal_repos/my-app/.next/cache/webpack/client-development-fallback/0.pack.gz_' -> '/Users/michaelswift/Documents/personal/personal_repos/my-app/.next/cache/webpack/client-development-fallback/0.pack.gz'
+[?25h

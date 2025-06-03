@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { ChevronDown } from "lucide-react"
-import Image from "next/image"
+import Link from "next/link"
 import { Navigation } from "./navigation"
 import { SocialLinks } from "./social-links"
 import { ContentItem } from "@/lib/content"
@@ -44,7 +44,7 @@ export function LeftSide({ aboutContent }: LeftSideProps) {
         <div className={`transition-opacity duration-500 ${hasScrolled ? "opacity-50" : "opacity-100"}`}>
           <div className="mb-6">
             <h1 className="text-3xl md:text-4xl font-sans font-medium">
-              <a href="/">Michael Swift</a>
+              <Link href="/">Michael Swift</Link>
             </h1>
           </div>
         </div>
@@ -62,7 +62,7 @@ export function LeftSide({ aboutContent }: LeftSideProps) {
                 <div className="space-y-3">
                   <h3 className="text-lg md:text-xl font-serif font-semibold text-foreground">Currently</h3>
                   <div className="space-y-4 text-lg md:text-xl font-serif leading-relaxed text-muted-foreground">
-                    <p>I'm a biologist using machine learning to design better RNA therapeutics.</p>
+                    <p>I&apos;m a systems biologist using machine learning to design better RNA therapeutics.</p>
                     <p>I earned my PhD at Stanford in the Quake lab, where I studied the generation and maintenance of diversity in the human immune system.</p>
                   </div>
                 </div>

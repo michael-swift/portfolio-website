@@ -33,7 +33,7 @@ export function Navigation({ className }: NavigationProps) {
                 })
               }}
             >
-              {section.charAt(0).toUpperCase() + section.slice(1)}
+              {section}
             </Link>
           </li>
         ))}
