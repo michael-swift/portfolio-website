@@ -41,9 +41,11 @@ export interface ContentItem {
   date?: string
   excerpt?: string
   category?: string
+  categories?: string[]
   tags?: string[]
+  link?: string
   content: string
-  [key: string]: any
+  [key: string]: unknown
 }
 
 export async function getContentItems(type: string): Promise<ContentItem[]> {
@@ -120,10 +122,12 @@ export async function getContentItem(type: string, slug: string): Promise<Conten
       date: data.date,
       excerpt: data.excerpt,
       category: data.category,
+      categories: data.categories,
       tags: data.tags,
+      link: data.link,
       ...data
     } as ContentItem
-  } catch (error) {
+  } catch {
     return null
   }
 }
