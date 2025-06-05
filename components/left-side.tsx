@@ -44,7 +44,7 @@ export function LeftSide({ aboutContent }: LeftSideProps) {
         <div className={`transition-opacity duration-500 ${hasScrolled ? "opacity-50" : "opacity-100"}`}>
           <div className="mb-6">
             <h1 className="text-3xl md:text-4xl font-sans font-medium">
-              <Link href="/">Michael Swift</Link>
+              <Link href="/" className="hover:underline underline-offset-4 transition-all">Michael Swift</Link>
             </h1>
           </div>
         </div>
@@ -67,13 +67,18 @@ export function LeftSide({ aboutContent }: LeftSideProps) {
                   </div>
                 </div>
 
+                {/* Divider */}
+                <div className="w-full h-px bg-neutral-200"></div>
+
                 {/* Interests Section */}
                 <div className="space-y-3">
                   <h3 className="text-lg font-serif font-semibold text-foreground">Some other interests</h3>
                   <div className="space-y-2 text-base md:text-lg font-serif text-muted-foreground">
                     <div className="flex items-start space-x-2">
                       <span className="text-foreground">•</span>
-                      <span>sequencing everything</span>
+                      <Link href="/science/sequencing" className="hover:underline underline-offset-4 transition-all">
+                        <span>sequencing everything</span>
+                      </Link>
                     </div>
                     <div className="flex items-start space-x-2">
                       <span className="text-foreground">•</span>
@@ -81,7 +86,9 @@ export function LeftSide({ aboutContent }: LeftSideProps) {
                     </div>
                     <div className="flex items-start space-x-2">
                       <span className="text-foreground">•</span>
-                      <span>producing music</span>
+                      <Link href="/tangents/maiklo" className="hover:underline underline-offset-4 transition-all">
+                        <span>producing music</span>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -89,14 +96,19 @@ export function LeftSide({ aboutContent }: LeftSideProps) {
             )}
           </div>
 
-          <Navigation className="mt-8" />
+          {/* Divider */}
+          <div className="mt-6 w-full h-px bg-neutral-200"></div>
+
+          <div className="mt-6 flex items-start justify-between">
+            <Navigation />
+            <div className="hidden md:block ml-16">
+              <h4 className="text-sm font-medium mb-2">social</h4>
+              <SocialLinks />
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="hidden md:flex flex-col space-y-4">
-        <SocialLinks />
-        <span className="text-sm text-neutral-600">Spring 2025</span>
-      </div>
 
       {/* Mobile scroll indicator */}
       <div className="md:hidden text-center mt-6">
