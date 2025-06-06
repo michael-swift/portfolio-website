@@ -14,11 +14,23 @@ interface LeftSideProps {
 export function LeftSide({ aboutContent }: LeftSideProps) {
   const [hasScrolled, setHasScrolled] = useState(false)
   const [showSecondComponent, setShowSecondComponent] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    // Check if mobile on mount and resize
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY
-      const scrollThreshold = 50
+      // Different scroll thresholds for mobile vs desktop
+      const scrollThreshold = isMobile ? 200 : 50
 
       if (scrollPosition > scrollThreshold && !hasScrolled) {
         setHasScrolled(true)
@@ -35,13 +47,14 @@ export function LeftSide({ aboutContent }: LeftSideProps) {
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [hasScrolled])
+  }, [hasScrolled, isMobile])
 
   return (
-    <div className="h-full flex flex-col justify-between p-10 md:p-16 lg:p-20">
-      <div className="space-y-6">
-        {/* Initial component - always visible */}
-        <div className={`transition-opacity duration-500 ${hasScrolled ? "opacity-50" : "opacity-100"}`}>
+    <div className="min-h-screen md:h-full flex flex-col justify-between p-6 md:p-16 lg:p-20">
+      <div className="flex-1 flex flex-col justify-center space-y-4 md:space-y-6 md:block">
+        {/* Mobile: Show everything immediately */}
+        {/* Desktop: Keep scroll animation */}
+        <div className={`transition-opacity duration-500 ${hasScrolled && !isMobile ? "opacity-50" : "opacity-100"}`}>
           <div className="mb-6">
             <h1 className="text-3xl md:text-4xl font-sans font-medium">
               <Link href="/" className="hover:underline underline-offset-4 transition-all">Michael Swift</Link>
@@ -49,10 +62,10 @@ export function LeftSide({ aboutContent }: LeftSideProps) {
           </div>
         </div>
 
-        {/* Second component - appears on scroll */}
+        {/* Content that appears on scroll (desktop) or immediately (mobile) */}
         <div
           className={`transition-all duration-500 space-y-4 ${
-            showSecondComponent ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
+            isMobile || showSecondComponent ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
           }`}
         >
           <div className="space-y-6">
@@ -99,9 +112,9 @@ export function LeftSide({ aboutContent }: LeftSideProps) {
           {/* Divider */}
           <div className="mt-6 w-full h-px bg-neutral-200"></div>
 
-          <div className="mt-6 flex items-start justify-between">
+          <div className="mt-6 flex flex-col md:flex-row md:items-start md:justify-between gap-6">
             <Navigation />
-            <div className="hidden md:block ml-16">
+            <div className="md:ml-16">
               <h4 className="text-sm font-medium mb-2">social</h4>
               <SocialLinks />
             </div>
@@ -111,10 +124,16 @@ export function LeftSide({ aboutContent }: LeftSideProps) {
 
 
       {/* Mobile scroll indicator */}
-      <div className="md:hidden text-center mt-6">
+      <div className="md:hidden text-center mt-auto pb-8">
+        <p className="text-sm text-muted-foreground mb-2">Scroll for projects</p>
         <button
-          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
-          className="bg-transparent border-none cursor-pointer"
+          onClick={() => {
+            const scienceSection = document.getElementById("science")
+            if (scienceSection) {
+              scienceSection.scrollIntoView({ behavior: "smooth" })
+            }
+          }}
+          className="bg-transparent border-none cursor-pointer animate-bounce"
         >
           <ChevronDown size={24} />
         </button>

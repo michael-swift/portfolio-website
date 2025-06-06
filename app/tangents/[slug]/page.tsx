@@ -20,11 +20,11 @@ export default async function TangentPage({ params }: TangentPageProps) {
       <div className="max-w-4xl mx-auto px-6 py-12">
         {/* Back button */}
         <Link 
-          href="/tangents" 
+          href="/" 
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-8 transition-colors"
         >
           <ArrowLeft size={16} />
-          Back to tangents
+          Back to home
         </Link>
 
         {/* Post header */}
@@ -71,11 +71,11 @@ export default async function TangentPage({ params }: TangentPageProps) {
         {/* Footer */}
         <footer className="mt-12 pt-8 border-t">
           <Link 
-            href="/tangents" 
+            href="/" 
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             <ArrowLeft size={16} />
-            Back to all tangents
+            Back to home
           </Link>
         </footer>
       </div>

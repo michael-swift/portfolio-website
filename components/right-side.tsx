@@ -25,8 +25,8 @@ export default function RightSide({ posts, scienceProjects, coverImages }: Right
 
   return (
     <div className="min-h-screen">
-      {/* Banner image for desktop */}
-      <div className="hidden md:block relative h-[780px]">
+      {/* Banner image - now visible on both mobile and desktop */}
+      <div className="relative h-[60vh] md:h-[780px]">
         <div className="absolute inset-0 flex items-center justify-center p-8">
           {selectedImage && (
             <Image
@@ -54,24 +54,24 @@ export default function RightSide({ posts, scienceProjects, coverImages }: Right
       </div>
 
       {/* Science Section */}
-      <section id="science" className="p-6 md:p-10">
+      <section id="science" className="p-6 md:p-10 pt-12 md:pt-6">
         <h2 className="text-3xl font-serif text-center mt-6 mb-4">Science</h2>
         <p className="text-center mb-8">Research projects in computational biology and immunology.</p>
 
-        <div className="space-y-8">
+        <div className="space-y-6 max-w-full md:max-w-[90%] mx-auto">
           {scienceProjects.map((project) => (
             <Card key={project.slug} className="border border-neutral-200">
-              <CardContent className="p-4 border-x border-b border-neutral-200">
-                <div className="text-sm uppercase mb-2">{project.category || 'Research'}</div>
-                <CardTitle className="text-xl mb-2">{project.title}</CardTitle>
+              <CardContent className="p-3 border-x border-b border-neutral-200">
+                <div className="text-sm uppercase mb-1">{project.category || 'Research'}</div>
+                <CardTitle className="text-xl mb-1">{project.title}</CardTitle>
                 {project.date && <div className="text-sm mb-2">{project.date}</div>}
                 <div 
-                  className="text-base mb-4 prose prose-sm max-w-none"
+                  className="text-base mb-2 prose prose-sm max-w-none"
                   dangerouslySetInnerHTML={{ __html: project.excerpt || project.content.substring(0, 300) + '...' }}
                 />
               </CardContent>
               {project.link && (
-                <CardFooter className="p-4 border-x border-b border-neutral-200 flex justify-between items-center">
+                <CardFooter className="p-3 border-x border-b border-neutral-200 flex justify-between items-center">
                   <a href={project.link} target="_blank" rel="noopener noreferrer" className="transition-all hover:font-bold">Read Paper</a>
                   <ChevronRight size={16} />
                 </CardFooter>
@@ -86,15 +86,15 @@ export default function RightSide({ posts, scienceProjects, coverImages }: Right
         <h2 className="text-3xl font-serif text-center mt-6 mb-4">Posts</h2>
         <p className="text-center mb-8">partially formed ideas and partially implemented projects.</p>
 
-        <div className="space-y-8">
+        <div className="space-y-6 max-w-full md:max-w-[90%] mx-auto">
           {posts.map((post) => (
             <Card key={post.slug} className="border border-neutral-200 hover:shadow-md transition-shadow">
               <a href={`/posts/${post.slug}`} className="block">
-                <CardContent className="p-4 border-x border-b border-neutral-200">
-                  <div className="text-sm uppercase mb-2">{post.categories?.[0] || 'Post'}</div>
+                <CardContent className="p-3 border-x border-b border-neutral-200">
+                  <div className="text-sm uppercase mb-1">{post.categories?.[0] || 'Post'}</div>
                   <CardTitle className="text-xl mb-2 hover:text-primary transition-colors">{post.title}</CardTitle>
                 {post.date && (
-                  <div className="text-sm mb-2">
+                  <div className="text-sm mb-1">
                     {new Date(post.date).toLocaleDateString('en-US', { 
                       year: 'numeric', 
                       month: 'long', 
@@ -110,7 +110,7 @@ export default function RightSide({ posts, scienceProjects, coverImages }: Right
                   }}
                 />
               </CardContent>
-              <CardFooter className="p-4 border-x border-b border-neutral-200 flex justify-between items-center">
+              <CardFooter className="p-3 border-x border-b border-neutral-200 flex justify-between items-center">
                 <span className="transition-all hover:font-bold">Read Post</span>
                 <ChevronRight size={16} />
               </CardFooter>
@@ -120,18 +120,6 @@ export default function RightSide({ posts, scienceProjects, coverImages }: Right
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="p-6 md:p-10">
-        <h2 className="text-3xl font-serif mt-6 mb-4">Contact</h2>
-        <div className="space-y-4 max-w-lg">
-          <p className="text-lg font-serif leading-relaxed text-muted-foreground">
-            I&apos;m always happy to connect with people who work on similar problems or share interests.
-          </p>
-          <p className="text-base font-serif text-muted-foreground">
-            Find me on most social internet platforms
-          </p>
-        </div>
-      </section>
     </div>
   )
 }

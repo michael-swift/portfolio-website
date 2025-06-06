@@ -1,7 +1,7 @@
 ---
 title: "Mapping the Statistics of the Human B cell system"
 category: "Systems Biology"
-date: "2023"
+date: "2025"
 excerpt: "A systems-level view of B cells by sampling multiple hard-to-study organs within the same individual."
 link: "https://www.pnas.org/doi/10.1073/pnas.2406474122"
 collection: science
