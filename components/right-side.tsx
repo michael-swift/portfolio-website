@@ -13,7 +13,7 @@ interface RightSideProps {
 }
 
 export default function RightSide({ posts, scienceProjects, coverImages }: RightSideProps) {
-  const [selectedImage, setSelectedImage] = useState(coverImages[0])
+  const [selectedImage, setSelectedImage] = useState<CoverImage | null>(null)
 
   useEffect(() => {
     // Randomly select an image on component mount
