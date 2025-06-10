@@ -16,10 +16,20 @@ export default function RightSide({ posts, scienceProjects, coverImages }: Right
   const [selectedImage, setSelectedImage] = useState<CoverImage | null>(null)
 
   useEffect(() => {
-    // Randomly select an image on component mount
+    // Randomly select an image on component mount with bias towards ribbon model
     if (coverImages.length > 0) {
-      const randomIndex = Math.floor(Math.random() * coverImages.length)
-      setSelectedImage(coverImages[randomIndex])
+      const ribbonModelIndex = coverImages.findIndex(img => 
+        img.src.includes('RibbonModel-crJaneRichardson-Lede-2048x1152.webp')
+      )
+      
+      // 90% chance for ribbon model, 10% chance for others
+      if (ribbonModelIndex !== -1 && Math.random() < 0.9) {
+        setSelectedImage(coverImages[ribbonModelIndex])
+      } else {
+        // Select randomly from all images (including ribbon model)
+        const randomIndex = Math.floor(Math.random() * coverImages.length)
+        setSelectedImage(coverImages[randomIndex])
+      }
     }
   }, [coverImages])
 
