@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <style>
+      .title-text { font-family: 'Arial', sans-serif; font-size: 18px; font-weight: bold; }
+      .label-text { font-family: 'Arial', sans-serif; font-size: 14px; }
+      .description-text { font-family: 'Arial', sans-serif; font-size: 12px; }
+      .virus-color { fill: #ff6b6b; stroke: #d63031; stroke-width: 2; }
+      .viroid-color { fill: #74b9ff; stroke: #0984e3; stroke-width: 2; }
+      .dna-color { fill: #fdcb6e; stroke: #e17055; stroke-width: 1; }
+    </style>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" class="title-text">Virus vs Viroid: Structural Comparison</text>
+  
+  <!-- Virus Section -->
+  <g id="virus-section">
+    <text x="200" y="70" text-anchor="middle" class="title-text">Virus</text>
+    
+    <!-- Virus capsid (outer shell) -->
+    <circle cx="200" cy="150" r="80" class="virus-color" fill-opacity="0.3"/>
+    <circle cx="200" cy="150" r="80" fill="none" class="virus-color"/>
+    
+    <!-- Virus genome (DNA/RNA inside) -->
+    <path d="M 140 150 Q 160 130, 180 150 Q 200 170, 220 150 Q 240 130, 260 150" 
+          fill="none" class="dna-color" stroke-width="3"/>
+    <path d="M 140 160 Q 160 140, 180 160 Q 200 180, 220 160 Q 240 140, 260 160" 
+          fill="none" class="dna-color" stroke-width="3"/>
+    
+    <!-- Virus polymerase proteins -->
+    <circle cx="170" cy="120" r="8" class="dna-color"/>
+    <circle cx="230" cy="180" r="8" class="dna-color"/>
+    <circle cx="180" cy="180" r="8" class="dna-color"/>
+    
+    <!-- Labels -->
+    <text x="200" y="250" text-anchor="middle" class="label-text">Components:</text>
+    <text x="200" y="270" text-anchor="middle" class="description-text">• Protein capsid</text>
+    <text x="200" y="285" text-anchor="middle" class="description-text">• Own polymerase</text>
+    <text x="200" y="300" text-anchor="middle" class="description-text">• DNA/RNA genome</text>
+    <text x="200" y="315" text-anchor="middle" class="description-text">• 10-300 kb size</text>
+  </g>
+  
+  <!-- Viroid Section -->
+  <g id="viroid-section">
+    <text x="600" y="70" text-anchor="middle" class="title-text">Viroid</text>
+    
+    <!-- Viroid RNA (just circular RNA, no capsid) -->
+    <circle cx="600" cy="150" r="40" fill="none" class="viroid-color" stroke-width="4"/>
+    
+    <!-- RNA secondary structure lines (rod-like structure) -->
+    <line x1="580" y1="130" x2="580" y2="170" class="viroid-color" stroke-width="2"/>
+    <line x1="585" y1="125" x2="585" y2="175" class="viroid-color" stroke-width="2"/>
+    <line x1="595" y1="120" x2="595" y2="180" class="viroid-color" stroke-width="2"/>
+    <line x1="605" y1="120" x2="605" y2="180" class="viroid-color" stroke-width="2"/>
+    <line x1="615" y1="125" x2="615" y2="175" class="viroid-color" stroke-width="2"/>
+    <line x1="620" y1="130" x2="620" y2="170" class="viroid-color" stroke-width="2"/>
+    
+    <!-- Labels -->
+    <text x="600" y="250" text-anchor="middle" class="label-text">Components:</text>
+    <text x="600" y="270" text-anchor="middle" class="description-text">• No protein capsid</text>
+    <text x="600" y="285" text-anchor="middle" class="description-text">• Uses host polymerase</text>
+    <text x="600" y="300" text-anchor="middle" class="description-text">• Circular RNA only</text>
+    <text x="600" y="315" text-anchor="middle" class="description-text">• 200-400 nucleotides</text>
+  </g>
+  
+  <!-- Arrow showing simplification -->
+  <path d="M 320 150 L 480 150" fill="none" stroke="#2d3436" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="400" y="140" text-anchor="middle" class="description-text">Extreme simplification</text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2d3436"/>
+    </marker>
+  </defs>
+  
+  <!-- Bottom note -->
+  <text x="400" y="370" text-anchor="middle" class="description-text">Viroids represent the ultimate genetic parasite - stripped down to just replicating RNA</text>
+</svg>

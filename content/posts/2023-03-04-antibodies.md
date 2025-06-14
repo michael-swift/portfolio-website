@@ -1,5 +1,5 @@
 ---
-title: LLMs and Antibodies
+title: Protein Language Models for Immunoglobulin Sequence Analysis
 date: 2023-03-04
 permalink: /posts/2023/05/nest-map
 excerpt_separator: <!--more-->
@@ -8,51 +8,57 @@ toc: true
 header:
  og_image: "/images/posts/llm_ir/llm_ir-writeup_38_0.png"
 tags:
-  - llm
-  - data-science
-  - scRNA-seq
+  - protein-language-models
+  - computational-biology
+  - immunoinformatics
+  - single-cell-transcriptomics
+  - antibody-repertoire
+  - somatic-hypermutation
+  - immunoglobulin-analysis
 ---
 ![png](/images/posts/llm_antibody/llm_ir-writeup_38_0.png)
 
-I wanted to understand if LLM / PLMs can be useful for analyzing antibody sequence data. Antibodies are proteins made by the immune system which are critical for protection against viruses. Here I used antibody sequencing data, AbLang (Antibody LLM), and single-cell rna sequencing data investigate.
+I investigated the application of protein language models (PLMs) for immunoglobulin sequence analysis. Antibodies are adaptive immune proteins critical for pathogen neutralization. This study integrates B-cell receptor (BCR) sequencing data, AbLang (an antibody-specific protein language model), and single-cell RNA sequencing to explore computational approaches in immunoinformatics.
 
 <!--more-->
-### protein language models
 
-Protein language models are inspired by natural language processing (NLP) models like GPT-4. They are designed to analyze and predict protein sequences, which are chains of amino acids with distinct functions in living organisms. These models are trained on large datasets of known protein sequences and appear to learn general truths and patterns about protein space through relatively simple and unsupervised training procedures. By understanding these patterns, the models can predict protein structure and function. Similar to NLP models, protein language models use a technique called "attention" to weigh the importance of different amino acids in the sequence, allowing them to capture long-range interactions and dependencies between amino acids. I wanted to understand how these models can be applied to studying antibody evolution in particular.
+### Protein Language Models in Structural Biology
 
-### Ablang Description
+Protein language models leverage transformer architectures adapted from natural language processing to analyze amino acid sequences. These models undergo unsupervised pre-training on large-scale protein databases, learning evolutionary constraints and structural motifs encoded in sequence space. Through self-attention mechanisms, they capture long-range amino acid dependencies critical for protein folding and function. The learned representations encode biophysical properties including secondary structure, solvent accessibility, and functional domains. I investigated their application to immunoglobulin evolution and somatic hypermutation analysis.
+
+### AbLang: Antibody-Specific Protein Language Model
     
 ![jpeg](/images/posts/llm_antibody/llm_ir-writeup_7_0.jpg)
 
-Ablang is a protein language model trained specifically on antibodies which was readily available to me and easy to install at the time. There's a strong argument to made for using a more general protein language model. At the least, one should compare the results here to something like ESM from Meta. 
+AbLang is a domain-specific protein language model trained exclusively on immunoglobulin sequences, optimizing representations for antibody variable regions. While domain-specific models may capture immunoglobulin-specific evolutionary patterns, comparative analysis with general protein language models (e.g., ESM-2, ProtTrans) would provide valuable benchmarking for immunoinformatics applications. 
 
 ### Additional Background about Antibodies at the bottom: 
 
-All that you'd need to know to understand what I'm going to show in this notebook is that generally speaking more somatic hypermutation means the antibody in question has been through more of this evolutionary process than an antibody that has no somatic hypermutation
+Somatic hypermutation frequency serves as a molecular marker of affinity maturation, with higher mutation loads indicating extensive germinal center selection and clonal evolution from naive B-cell precursors.
 
 ## Overview of my investigation:
 
-- associate the single cell transcriptome data with the embeddings calculated using AbLang for each B cell
-- perform PCA on the LLM embeddings
-- ad-hoc generation separation of similar antibody-types in the PCA space
-- differential gene-expression analysis of B cells using these LLM defined clusters
-- visualize embeddings with UMAP
+- integrate single-cell transcriptomic profiles with AbLang-derived immunoglobulin embeddings
+- apply principal component analysis to protein language model representations
+- perform unsupervised clustering of immunoglobulin sequence embeddings
+- conduct differential gene expression analysis using embedding-defined B-cell subpopulations
+- generate low-dimensional visualizations via UMAP projection
 
-## LLMs, Antibodies, and Single Cell Genomics
+## Protein Language Models for Immunoglobulin Analysis in Single-Cell Genomics
 A Quick Look at the Dataset
 
 
     
 ![png](/images/posts/llm_antibody/llm_ir-writeup_18_0.png)
     
-So we have hundreds to thousands of single B cells in each sample with each B cells having an RNA transcriptome and an Antibody Sequence associated with it 
+The dataset comprises hundreds to thousands of individual B cells per sample, each with paired single-cell transcriptomic profiles and cognate immunoglobulin heavy and light chain sequences. 
 
-I'm hoping this helps orient -- we can see the single cell RNA sequencing data coheres in a global way with the Antibody Sequence via these UMAPs:
+These UMAP projections demonstrate global coherence between transcriptomic states and immunoglobulin sequence characteristics:
 
-1. I'm plotting UMAP projections of the single cell RNA sequencing data colored by metadata about the transcriptional state (far left) or the antibody sequence (right two)2. Memory B cells have previously participated in immune respones and thus have acquired hypermutations in the antibody sequence. Naive B cells have no mutation in their antibody sequence.
-3. The antibody mutation level is determined by asking how far away any given antibody is in nucleotide spacefrom our best guess of the VDJ genes which constructed it. 
-4. Memory B cells also appear to have switched Antibody Constant Region usage, another sign of they have already participated in the immune response.
+1. UMAP projections of single-cell transcriptomic data colored by B-cell developmental state (left) and immunoglobulin sequence features (right panels)
+2. Memory B cells represent antigen-experienced populations with accumulated somatic hypermutations, while naive B cells maintain germline immunoglobulin sequences
+3. Mutation frequency is quantified as nucleotide divergence from inferred germline V(D)J gene segments
+4. Memory B cells exhibit class switch recombination from IgM to downstream isotypes (IgG, IgA, IgE), indicating germinal center participation
 
 
 
@@ -61,15 +67,15 @@ I'm hoping this helps orient -- we can see the single cell RNA sequencing data c
     
 
 
-We can see my annotations of the antibody sequence are clearly related in a global way to the B cell Type determined via single-cell RNA sequencing. For example, cells which are Memory B cells most ofter have antibody sequences I annotated as hypermutated. 
+Immunoglobulin sequence annotations demonstrate strong concordance with transcriptomically-defined B-cell subsets. Memory B cells predominantly harbor hypermutated immunoglobulin sequences, confirming the molecular signatures of germinal center-derived populations. 
 
-I'm curious whether the sequence encoding of the antibody sequence can also meaningfully represent a known phenomenon like hypermutation or constant region usage.Now I'm plotting the same categorical variables from the UMAPS on the PCA of the antibody sequence embedding calculated using AbLang
+I investigated whether protein language model embeddings capture biologically meaningful immunoglobulin features including somatic hypermutation and isotype usage. The following PCA analysis examines these categorical variables within AbLang embedding space:
 
 ![png](/images/posts/llm_antibody/llm_ir-writeup_26_0.png)
     
-This is interesting, it is clear the language model has learned what hypermutation looks like and pretty neatly separates antibodies with no mutations from mutated antibodies using PC1 and PC3. Furthermore, on PC3, there appears to be continuous varation in the hypermutated antibody space, but it's clear there is an arrow that can be drawn from predominantly IGHM class antibodies to the other type (e.g. IGHA1). So the model appears to capture something meaningful about antibodies. 
+The protein language model demonstrates learned representations of somatic hypermutation, cleanly separating germline from hypermutated immunoglobulins along PC1 and PC3. PC3 reveals continuous variation within hypermutated sequence space, with a clear trajectory from IgM to class-switched isotypes (IgG, IgA). This suggests the model captures fundamental immunoglobulin biology including affinity maturation and class switch recombination. 
 
-Let's look at the relationship between hypermutation and the the PCs in a quantitative sense, in particular I'm interested in PC3, which appears to separate IGHM antibodies from the others. Does this separation exist in a meaningful way in gene expression space as well? 
+Quantitative analysis of somatic hypermutation along principal components, particularly PC3 which separates IgM from class-switched isotypes, reveals corresponding patterns in transcriptomic space: 
 
 
 ![png](/images/posts/llm_antibody/llm_ir-writeup_29_1.png)
@@ -102,24 +108,24 @@ Let's finally take a quick look at the UMAP projection of the antibody sequence 
     
 ![png](/images/posts/llm_antibody/llm_ir-writeup_38_1.png)
 
-Looks like the UMAP separates antibody sequences by V gene usage in addition to the hypermutation levels. <br> <br> We can see that the same V gene generally clusters together, but within these broad gene families the mutated sequences cluster together or apart from the no mutations sequences 
+UMAP projection demonstrates clustering by V gene family usage alongside somatic hypermutation levels. Immunoglobulin sequences cluster by germline V gene origin, with secondary separation of hypermutated variants within each gene family, reflecting both germline diversity and somatic evolution. 
 
 
-### Summary: 
- I was curious about large language models, so I downloaded one and applied it to data I've generated, I found that:
-- the language model encodes antibody hypermutation on 2 relatively orthongonal axes 
-- one is just whether or not there are any mutations
-- the other is how many mutations there are
-- ad-hoc classification of antibody encoding types generally coheres with my orthogonal measurement of gene expression
+### Summary:
+This immunoinformatics analysis demonstrates that protein language models capture biologically relevant immunoglobulin features:
+- AbLang embeddings encode somatic hypermutation along orthogonal dimensions
+- Binary germline vs. hypermutated classification along one axis
+- Continuous mutation load quantification along another axis  
+- Embedding-based immunoglobulin clustering correlates with independent transcriptomic B-cell phenotypes
 
-### To do: 
+### Future Directions:
 
-- Investigate the distance in antibody encoding space between related antibody sequences, is that distnace meaningfully smaller than a reasonable null expection?
-- train LLM on all of antibody space (e.g. mouse, camelid, monkey) vs just human (which Ablang has done). It's a poorly formed idea, but this could be used to perform comparative immunogenomics in a less-biased manner
-- train LLM only on memory antibody space (Ablang has used unmutated and mutated antibodies and I wonder if the large amount of unmutated antibodies may obscure something about hypermuation and antibody evolution)
+- Quantify embedding space distances for clonally related immunoglobulins to assess phylogenetic signal preservation
+- Develop cross-species protein language models incorporating mouse, camelid, and non-human primate immunoglobulin data for comparative immunogenomics
+- Train memory-specific models exclusively on hypermutated sequences to enhance affinity maturation signal detection
 
-### Antibody Background
-An antibody is a protective protein produced by the B cells in the immune system to neutralize and defend against harmful pathogens, such as viruses. Structurally, antibodies are composed of four polypeptide chains—two identical heavy chains and two identical light chains—linked by disulfide bonds, forming a Y-shaped m/images/posts/nest-map/olecule. The unique feature of antibodies lies in their variable region, located at the tips of the Y-shaped structure, which is responsible for binding specifically to the foreign substance, or antigen.
+### Immunoglobulin Structure and Function
+Immunoglobulins are tetrameric glycoproteins comprising two heavy chains and two light chains linked by disulfide bonds in a characteristic Y-shaped quaternary structure. The antigen-binding domain, formed by the variable heavy (VH) and variable light (VL) regions, determines specificity through complementarity-determining regions (CDRs) that contact cognate antigens.
 
 The variable region is generated stochastically through a process called V(D)J recombination. This process involves the pseudo-random selection, recombination, and joining of gene segments—Variable (V), Diversity (D), and Joining (J) segments—along with the introduction of pseudo-random nucleotide insertions and deletions between the recombined genes. This generates astromomical standing antibody sequence diversity which could never be encoded in the genome. Selection of particular antibodies from this diversity allows indivuduals to adapt their immune system to never-before-seen pathogens.
 

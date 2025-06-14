@@ -6,22 +6,29 @@ excerpt_separator: <!--more-->
 always_allow_html: true
 toc: true
 tags:
-  - subviral entities
+  - virology
+  - genomics
+  - rna-biology
+  - computational-virology
+  - subviral-entities
+  - microbiome
+  - phylogenomics
+  - structural-biology
 ---
 
-## novel viroid-like entities revealed by computational biology
+## Novel viroid-like entities revealed by computational genomics and bioinformatics
 
-These authors _would_ write this paper, and I mean that in the good way. We have Andy Fire, who is famous for a deeply thoughtful career in RNA biology. We have Ami Bhatt: a world-class researcher who leads a group that generates and interprets micro-biome sequencing data. We also have the participation of Robert C. Edgar on the paper — he is, as far as I am aware, the only “independent researcher” in biology that is respected. His open-source software MUSCLES its way into many a phylogenetic analysis. Plus I like his style:
+These authors _would_ write this paper, and I mean that in the good way. We have Andy Fire, who is famous for a deeply thoughtful career in RNA molecular biology and post-transcriptional gene regulation. We have Ami Bhatt: a world-class researcher who leads a group specializing in microbiome genomics and metagenomic analysis. We also have the participation of Robert C. Edgar on the paper — he is, as far as I am aware, the only “independent researcher” in biology that is respected. His open-source bioinformatics software MUSCLE is integral to many phylogenetic reconstructions. Plus I like his style:
 
 [![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd57360b0-bebf-43f2-a9e8-e97efb39c9f2_1698x940.png)](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd57360b0-bebf-43f2-a9e8-e97efb39c9f2_1698x940.png)this is the platonic case of a dude who got rich by selling a tech company in the late 90s 
 <!--more-->
 ####  **So what’s a viroid?**
 
-It is like a virus, but even simpler. Viruses are genetic parasites which generally carry nothing more than what is required to self-replicate. This includes their own polymerase which copies their genome and a protein coat which envelopes the genome. Viral polymerases are often used to identify and classify viruses via sequence similarity. Of course, if you’re a freeloading parasite already, why not freeload harder and just use your host’s polymerase and also it’s warm inside cells so get rid of that protein coat. To me, seems like a winning strategy. Yet this strategy would make traditional approaches for detecting viroid-like entities difficult, because they don’t have much sequence similarity to anything else. And they don’t have much sequence at all really.
+It is like a virus, but even simpler. Viruses are obligate intracellular parasites carrying minimal genomic content required for replication. This typically includes RNA-dependent RNA polymerases (RdRp) or DNA polymerases for genome replication and structural proteins forming the capsid. Viral polymerases serve as phylogenetic markers for taxonomic classification through sequence homology analyses. Of course, if you’re a freeloading parasite already, why not freeload harder and just use your host’s polymerase and also it’s warm inside cells so get rid of that protein coat. To me, seems like a winning strategy. Yet this strategy would make traditional approaches for detecting viroid-like entities difficult, because they don’t have much sequence similarity to anything else. And they don’t have much sequence at all really.
 
 #### Viroid nominator
 
-Enter Vnom a program developed by the authors which uses a set of heuristics to nominate possible viroid-like elements. Possible candidate assemblies should be circular and detected in positive and negative strand orientation (indicative of replication)
+The authors developed Vnom, a computational pipeline employing heuristic algorithms to identify putative viroid-like elements. Candidate sequences must exhibit circular topology and bidirectional strand detection, indicating active replication through complementary strand synthesis.
 
 [![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc0341e07-442e-4654-9485-2ef98701b95d_1570x442.png)](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc0341e07-442e-4654-9485-2ef98701b95d_1570x442.png)
 

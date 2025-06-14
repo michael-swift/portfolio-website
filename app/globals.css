@@ -122,3 +122,82 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* PedalBored comparison tables */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  background: hsl(var(--card));
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.comparison-table th {
+  background: hsl(var(--muted));
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid hsl(var(--border));
+  width: 33.33%;
+  color: hsl(var(--foreground));
+}
+
+.comparison-table td {
+  padding: 1.5rem 1rem;
+  vertical-align: top;
+  border-right: 1px solid hsl(var(--border));
+  color: hsl(var(--muted-foreground));
+}
+
+.comparison-table td:last-child {
+  border-right: none;
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+.distortion-label {
+  font-size: 0.85rem;
+  color: hsl(var(--muted-foreground));
+  font-style: italic;
+  margin-top: 0.5rem;
+  opacity: 0.8;
+}
+
+/* PedalBored specific image sizing */
+img[src*="pedal_tinkering_illustration.png"],
+img[src*="lyric_operator_pedal.png"] {
+  max-width: 55% !important;
+}
+
+img[src*="pedalbored_flow_diagram.svg"] {
+  max-width: 95% !important;
+}
+
+/* Image centering for post excerpts */
+.prose img {
+  @apply mx-auto block max-w-full rounded-lg shadow-sm;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Ensure justified text is readable */
+.text-justify {
+  hyphens: auto;
+  word-spacing: 0.1em;
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+  .comparison-table {
+    font-size: 0.85rem;
+  }
+  
+  .comparison-table th,
+  .comparison-table td {
+    padding: 0.8rem 0.5rem;
+  }
+}

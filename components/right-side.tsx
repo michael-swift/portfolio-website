@@ -22,8 +22,8 @@ export default function RightSide({ posts, scienceProjects, coverImages }: Right
         img.src.includes('RibbonModel-crJaneRichardson-Lede-2048x1152.webp')
       )
       
-      // 90% chance for ribbon model, 10% chance for others
-      if (ribbonModelIndex !== -1 && Math.random() < 0.9) {
+      // 60% chance for ribbon model, 40% chance for others
+      if (ribbonModelIndex !== -1 && Math.random() < 0.6) {
         setSelectedImage(coverImages[ribbonModelIndex])
       } else {
         // Select randomly from all images (including ribbon model)
@@ -69,20 +69,26 @@ export default function RightSide({ posts, scienceProjects, coverImages }: Right
         <p className="text-center mb-8">Research projects in computational biology and immunology.</p>
 
         <div className="space-y-6 max-w-full md:max-w-[90%] mx-auto">
-          {scienceProjects.map((project) => (
+          {scienceProjects
+            .filter(project => !project.disable_link)
+            .map((project) => (
             <Card key={project.slug} className="border border-neutral-200">
               <CardContent className="p-3 border-x border-b border-neutral-200">
                 <div className="text-sm uppercase mb-1">{project.category || 'Research'}</div>
                 <CardTitle className="text-xl mb-1">{project.title}</CardTitle>
                 {project.date && <div className="text-sm mb-2">{project.date}</div>}
                 <div 
-                  className="text-base mb-2 prose prose-sm max-w-none"
-                  dangerouslySetInnerHTML={{ __html: project.excerpt || project.content.substring(0, 300) + '...' }}
+                  className="text-base mb-2 prose prose-sm max-w-none text-justify [&_img]:mx-auto [&_img]:block [&_img]:max-w-full"
+                  dangerouslySetInnerHTML={{ __html: project.excerpt || project.content.substring(0, 500) + '...' }}
                 />
               </CardContent>
-              {project.link && (
+              {(project.link || !project.disable_link) && (
                 <CardFooter className="p-3 border-x border-b border-neutral-200 flex justify-between items-center">
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="transition-all hover:font-bold">Read Paper</a>
+                  {project.link ? (
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="transition-all hover:font-bold">Read the Paper</a>
+                  ) : (
+                    <a href={`/science/${project.slug}`} className="transition-all hover:font-bold">View Details</a>
+                  )}
                   <ChevronRight size={16} />
                 </CardFooter>
               )}
@@ -114,9 +120,9 @@ export default function RightSide({ posts, scienceProjects, coverImages }: Right
                   </div>
                 )}
                 <div 
-                  className="text-base prose prose-sm max-w-none"
+                  className="text-base prose prose-sm max-w-none text-justify [&_img]:mx-auto [&_img]:block [&_img]:max-w-full"
                   dangerouslySetInnerHTML={{ 
-                    __html: post.excerpt || post.content.substring(0, 200) + '...' 
+                    __html: post.excerpt || post.content.substring(0, 400) + '...' 
                   }}
                 />
               </CardContent>

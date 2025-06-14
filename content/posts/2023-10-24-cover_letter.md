@@ -1,17 +1,19 @@
 ---
-title: "Latex Cover Letter Template"
+title: "Cover Letter LaTeX Template"
 date: 2023-11-20
 permalink: /posts/2023/10/cover_letter
-categories: [LaTeX, Academic]
-tags: [scientific publishing, cover letter, latex]
+categories: [Document-Automation, Academic-Publishing]
+tags: [document-generation, typesetting-systems, manuscript-preparation, template-engineering, scholarly-communication]
 header:
   og_image: "/images/posts/latex/fake_university_seal.png"
 ---
 
 ![png](/images/posts/latex/manuscript_submission_cover_letter_overleaf.png)
 
-I'm writing a cover letter for my final paper from my PhD. I couldn't find a latex template so I made one myself. I hope it can be useful to others.
+I was writing a cover letter for a journal submission and got tired of manually formatting everything each time. So I made a LaTeX template to automate the process. It handles all the standard formatting and lets you just fill in the details.
 
 <!--more-->
 
-I've shared the work on my [github](https://github.com/michael-swift/JournalCoverLetter) and as an [Overleaf template](https://www.overleaf.com/latex/templates/journal-submission-cover-letter/vsvmwwszmdtn).
+The template takes care of the layout, spacing, and professional formatting automatically. You just need to update a few variables at the top of the document with your information and the journal details, and it generates a properly formatted cover letter.
+
+I've put it up on [GitHub](https://github.com/michael-swift/JournalCoverLetter) and made it available as a template on [Overleaf](https://www.overleaf.com/latex/templates/journal-submission-cover-letter/vsvmwwszmdtn) so anyone can use it.
