@@ -1,6 +1,12 @@
-# Personal Website
+# Portfolio Website
 
-This is a [Next.js](https://nextjs.org) project that serves as my personal website, built with React and TypeScript. The site is exported as a static site and hosted on GitHub Pages.
+A minimal, responsive two-column portfolio website built with Next.js, featuring a clean split-screen layout and smooth scrolling interactions. Showcases scientific research, blog posts, and projects with a focus on computational biology and systems biology.
+
+## Demo
+
+![Portfolio Website Demo](./public/frontpage.png)
+
+*Clean two-column layout with responsive design and smooth scrolling*
 
 ## Getting Started
 
@@ -33,6 +39,15 @@ npm run build
 
 The site uses Next.js static export functionality to generate a fully static website that can be hosted on GitHub Pages without a Node.js server.
 
+## CI/CD Pipeline
+
+This project includes a complete CI/CD pipeline using GitHub Actions:
+
+- **Continuous Integration**: Automated testing, linting, and TypeScript checking on every push
+- **Continuous Deployment**: Automatic deployment to GitHub Pages when tests pass
+- **Quality Gates**: Code must pass all checks before deployment
+- **Cross-Repository Deployment**: Builds in source repo, deploys to GitHub Pages repo
+
 ## Project Structure
 
 - `/app` - Next.js app directory with routes and layouts
@@ -43,9 +58,10 @@ The site uses Next.js static export functionality to generate a fully static web
 
 ## Features
 
-- Static site generation with Next.js
-- Markdown-based content management
-- Responsive split-screen layout
-- Blog posts, science projects, and tangent pages
-- TypeScript for type safety
-- Tailwind CSS for styling
+- **Minimal Two-Column Layout** - Clean split-screen design with smooth scrolling
+- **Responsive Design** - Adapts seamlessly to desktop and mobile devices
+- **Static Site Generation** - Built with Next.js for optimal performance
+- **Markdown-Based Content** - Easy content management for posts and projects
+- **Scientific Portfolio** - Showcases research projects, publications, and blog posts
+- **TypeScript & Modern Stack** - Type-safe development with Tailwind CSS styling
+- **CI/CD Pipeline** - Automated testing and deployment with GitHub Actions

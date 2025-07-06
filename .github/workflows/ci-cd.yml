@@ -1,0 +1,54 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  ci-cd:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout source code
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Run linting
+      run: npm run lint
+    
+    - name: Run TypeScript check
+      run: npx tsc --noEmit
+    
+    - name: Build project
+      run: npm run build
+    
+    - name: Deploy to GitHub Pages
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      env:
+        GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+      run: |
+        # Configure git
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        
+        # Clone the deployment repository
+        git clone https://x-access-token:${{ secrets.DEPLOY_TOKEN }}@github.com/michael-swift/michael-swift.github.io.git deploy-repo
+        
+        # Copy built files to deployment repo
+        cp -r out/* deploy-repo/
+        
+        # Commit and push changes
+        cd deploy-repo
+        git add .
+        git commit -m "Deploy from ${{ github.sha }}" || exit 0
+        git push origin main
