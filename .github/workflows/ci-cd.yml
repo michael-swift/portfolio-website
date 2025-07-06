@@ -51,4 +51,4 @@ jobs:
         cd deploy-repo
         git add .
         git commit -m "Deploy from ${{ github.sha }}" || exit 0
-        git push origin main
+        git push origin master
