@@ -26,7 +26,7 @@ export default function MinimalRightSide({ posts, scienceProjects, coverImages }
   // Function to extract image from content (enhanced frontmatter approach)
   const getContentImage = (item: ContentItem): CoverImage => {
     // Priority 1: Dedicated image field in frontmatter
-    if (item.image) {
+    if (item.image && typeof item.image === 'string') {
       return {
         src: item.image,
         alt: item.title,
@@ -36,7 +36,7 @@ export default function MinimalRightSide({ posts, scienceProjects, coverImages }
     }
     
     // Priority 2: teaser field (common Jekyll convention)
-    if (item.teaser) {
+    if (item.teaser && typeof item.teaser === 'string') {
       return {
         src: item.teaser,
         alt: item.title,
@@ -46,9 +46,10 @@ export default function MinimalRightSide({ posts, scienceProjects, coverImages }
     }
     
     // Priority 3: og_image in header
-    if (item.header?.og_image) {
+    const header = item.header as Record<string, unknown> | undefined
+    if (header?.og_image && typeof header.og_image === 'string') {
       return {
-        src: item.header.og_image,
+        src: header.og_image,
         alt: item.title,
         width: 1200,
         height: 630
@@ -56,9 +57,9 @@ export default function MinimalRightSide({ posts, scienceProjects, coverImages }
     }
     
     // Priority 4: header.teaser (alternative location)
-    if (item.header?.teaser) {
+    if (header?.teaser && typeof header.teaser === 'string') {
       return {
-        src: item.header.teaser,
+        src: header.teaser,
         alt: item.title,
         width: 1200,
         height: 630
