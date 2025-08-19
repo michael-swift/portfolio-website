@@ -1,11 +1,12 @@
 ---
 title: "Cover Letter LaTeX Template"
 date: 2023-11-20
+excerpt: "a clean LaTeX template for academic journal submission cover letters"
 permalink: /posts/2023/10/cover_letter
 categories: [Document-Automation, Academic-Publishing]
 tags: [document-generation, typesetting-systems, manuscript-preparation, template-engineering, scholarly-communication]
 header:
-  og_image: "/images/posts/latex/fake_university_seal.png"
+  og_image: "/images/posts/latex/manuscript_submission_cover_letter_overleaf.png"
 ---
 
 ![png](/images/posts/latex/manuscript_submission_cover_letter_overleaf.png)

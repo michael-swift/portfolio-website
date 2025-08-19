@@ -88,13 +88,6 @@ export default async function PostPage({ params }: PostPageProps) {
 
         {/* Footer */}
         <footer className="mt-12 pt-8 border-t">
-          <Link 
-            href="/#posts" 
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ArrowLeft size={16} />
-            Back to all posts
-          </Link>
         </footer>
       </div>
     </div>

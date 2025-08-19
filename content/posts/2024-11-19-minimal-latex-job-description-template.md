@@ -2,6 +2,8 @@
 layout: post
 title: "A Minimal LaTeX Job Description Template"
 date: 2024-11-19
+excerpt: "a clean, professional LaTeX template for creating job description PDF"
+image: "/images/posts/jd_template_preview.png"
 categories: [latex, templates]
 tags: [latex, job-description, template, documentation]
 ---

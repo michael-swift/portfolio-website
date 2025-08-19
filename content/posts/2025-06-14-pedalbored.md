@@ -2,19 +2,21 @@
 layout: post
 title: "PedalBored: Distorting Lyrics Like Guitar Pedals Distort Sound"
 date: 2025-06-14
+excerpt: "neural language transformations to lyrics like guitar pedals transform sound"
+image: "/images/posts/pedal_tinkering_illustration.png"
 categories: [natural-language-processing, computational-creativity, music-informatics]
 tags: [transformer-models, semantic-drift, lyrical-analysis, computational-linguistics, machine-translation, python]
 ---
 
-*What if we applied cascaded neural language transformations to lyrics like a distortion pedal modifies audio signals?*
+*What if we pushed lyrics through a series of noisy neural language transformations a la a distortion pedal*
 
 ![PedalBored Concept](/images/posts/pedal_tinkering_illustration.png)
 
-Guitar pedals transform signals in unpredictable and rewarding ways - could we do the same with lyrics? This idea occurred to me about 6 years ago when implementing a Naive Bayes classifier for text classification during my first computational statistics course. I said I would circle back -- well here. the fuck. I am.
+Guitar pedals transform signals in unpredictable and rewarding ways - could we do the same with lyrics? This idea occurred to me about 6 years ago when implementing a Naive Bayes classifier for text classification during my first computational statistics course. I said I would circle back -- well here I am.
 
 Back. 
 
-Except now I'm leveraging large-scale transformer architectures instead of simple probabilistic models. And now with Claude Code I can just do things.
+Now I'm using large-scale transformer architectures instead of simple probabilistic models. And now I can just let Claude Code do simple development tasks in the background while I do laundry etc.
 
 ![Lyric Operator Pedal](/images/posts/lyric_operator_pedal.png)
 
@@ -87,7 +89,7 @@ Dylan's classic opening verse, increasingly scrambled.
   </tr>
 </table>
 
-My favorite transformation: "like a rolling stone" → "like a boat without a rudder, like a rolling leaf". The cascaded translation process generated novel metaphorical constructions that preserve the semantic essence of directionless motion while introducing maritime and botanical imagery.
+My favorite transformation: "like a rolling stone" → "like a boat without a rudder, like a rolling leaf". The cascaded translation process generated novel metaphorical constructions that preserve the semantic essence of directionless motion while introducing a different idiom that has some fresh potential. 
 
 
 ## Try It Yourself
@@ -114,10 +116,8 @@ heavy = language_chain(
 
 ## Is This Useful?
 
-Probably not in any utilitarian sense. But neither are my 4 delay pedals. Sometimes you need your words to undergo stochastic transformation and return semantically altered. I imagine one could optimize this through prompt engineering, translation chain length, masking probability tuning, etc. and generate more compelling lyrical variations than what I've demonstrated. Maybe if some young computational artist looking to break into the music industry picked up on this approach they could really innovate.
+Probably not. But neither are my 4 delay pedals. Sometimes you need your words to undergo a stochastic transformation through some GPUs in Oregon and return *semantically altered man*. One could optimize the outputs through prompt engineering, translation chain length, masking probability tuning, etc. and generate more compelling lyrical variations than what I've demonstrated.
 
-Or maybe I just wanted to name something "PedalBored."
+In any case, I found  I learned quite a bit about these models and the current API (including how to evade copyright violations).
 
 ---
-
-*PedalBored is open source. Turn the knobs, see what happens.*

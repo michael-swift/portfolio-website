@@ -1,12 +1,13 @@
 ---
 title: Protein Language Models for Immunoglobulin Sequence Analysis
 date: 2023-03-04
+excerpt: "Do protein language models capture meaningful features of antibody sequences?"
 permalink: /posts/2023/05/nest-map
 excerpt_separator: <!--more-->
 always_allow_html: true
 toc: true
 header:
- og_image: "/images/posts/llm_ir/llm_ir-writeup_38_0.png"
+ og_image: "/images/posts/llm_antibody/llm_ir-writeup_38_0.png"
 tags:
   - protein-language-models
   - computational-biology

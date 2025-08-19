@@ -48,7 +48,7 @@ export default async function SciencePage({ params }: SciencePageProps) {
           prose-h3:text-xl prose-h3:md:text-2xl prose-h3:mb-3 prose-h3:mt-6
           prose-p:text-base prose-p:md:text-lg prose-p:leading-relaxed prose-p:mb-6 prose-p:font-serif prose-p:text-muted-foreground
           prose-strong:font-semibold prose-strong:text-foreground
-          prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+          prose-a:text-primary prose-a:no-underline prose-a:hover:underline
           prose-ul:mb-6 prose-ul:space-y-2 prose-li:text-base prose-li:md:text-lg prose-li:font-serif prose-li:text-muted-foreground
           prose-ol:mb-6 prose-ol:space-y-2
           prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-muted-foreground
@@ -70,13 +70,6 @@ export default async function SciencePage({ params }: SciencePageProps) {
 
         {/* Footer */}
         <footer className="mt-12 pt-8 border-t">
-          <Link 
-            href="/" 
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ArrowLeft size={16} />
-            Back to home
-          </Link>
         </footer>
       </div>
     </div>

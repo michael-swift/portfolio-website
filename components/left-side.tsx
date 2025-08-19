@@ -109,16 +109,6 @@ export function LeftSide({ aboutContent }: LeftSideProps) {
             )}
           </div>
 
-          {/* Divider */}
-          <div className="mt-6 w-full h-px bg-neutral-200"></div>
-
-          <div className="mt-6 flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-            <Navigation />
-            <div className="md:ml-16">
-              <h4 className="text-sm font-medium mb-2">social</h4>
-              <SocialLinks />
-            </div>
-          </div>
         </div>
       </div>
 

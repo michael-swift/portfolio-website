@@ -2,6 +2,7 @@
 title: "Leveraging lineage tracing to understand cell reprogramming"
 category: "Cell Biology"
 date: "2023"
+image: "/images/phd_defense_screenshot.png"
 excerpt: "How cells integrate external signals with their intrinsic state during reprogramming, using human B cells as a model system."
 link: "https://www.life-science-alliance.org/content/lsa/6/3/e202201792.full.pdf"
 collection: science

@@ -70,13 +70,6 @@ export default async function TangentPage({ params }: TangentPageProps) {
 
         {/* Footer */}
         <footer className="mt-12 pt-8 border-t">
-          <Link 
-            href="/" 
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ArrowLeft size={16} />
-            Back to home
-          </Link>
         </footer>
       </div>
     </div>
