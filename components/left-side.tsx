@@ -3,8 +3,6 @@
 import { useState, useEffect } from "react"
 import { ChevronDown } from "lucide-react"
 import Link from "next/link"
-import { Navigation } from "./navigation"
-import { SocialLinks } from "./social-links"
 import { ContentItem } from "@/lib/content"
 
 interface LeftSideProps {
